@@ -81,7 +81,9 @@ function Index() {
             </button>
           ))}
         </div>
-        <p className="font-mono text-xs text-muted-foreground">{lista.length} eventos</p>
+        <p className="font-mono text-xs text-muted-foreground">
+          {lista.length} {lista.length === 1 ? "evento" : "eventos"}
+        </p>
       </section>
 
       <ol className="mt-4">
