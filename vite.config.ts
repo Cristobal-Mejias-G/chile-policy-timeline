@@ -8,7 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // GH_PAGES=1 (set by .github/workflows/pages.yml) prerenders "/" to static HTML
 // under BASE_PATH so the site can be served from GitHub Pages.
-const ghPages = process.env.GH_PAGES === "1";
+const ghPages = process.env["GH_PAGES"] === "1";
 
 export default defineConfig({
   tanstackStart: {
@@ -22,5 +22,5 @@ export default defineConfig({
         }
       : {}),
   },
-  ...(ghPages ? { vite: { base: process.env.BASE_PATH || "/" } } : {}),
+  ...(ghPages ? { vite: { base: process.env["BASE_PATH"] || "/" } } : {}),
 });
